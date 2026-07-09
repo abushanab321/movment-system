@@ -2,4 +2,4 @@
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Hello = require(ReplicatedStorage.Hello)
-local hello = Hellosdsadsadasdas
+local hello = Hello
