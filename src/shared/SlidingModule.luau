@@ -1,0 +1,3 @@
+local SlidingModule = {}
+
+return SlidingModule
