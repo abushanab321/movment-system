@@ -14,12 +14,12 @@ function SlidingModule.NewSlide(Player, Speed, StartPosition)
 end
 
 ----operators----
-function SlidingModule:Slide()
+function SlidingModule:StartSlide()
 	local Character = self.Character
 	local Speed = self.Speed
 	local StartPosition = self.StartPosition + Vector3.new(1, 0, 0)
 
-	local HumanoidRootPart: Part = Character:FindFirstChild("HumanoidRootPart")
+	local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 	HumanoidRootPart.Anchored = true
 	HumanoidRootPart.Position = StartPosition
 
@@ -32,5 +32,10 @@ function SlidingModule:Slide()
 
 		HumanoidRootPart.Position = HumanoidRootPart.Position + Vector3.new(0, 0, Position)
 	end)
+end
+
+function SlidingModule:StopSlide()
+	self.HeartbeatConnection:Disconnect()
+	self.Character.HumanoidRootPart.Anchored = false
 end
 return SlidingModule
