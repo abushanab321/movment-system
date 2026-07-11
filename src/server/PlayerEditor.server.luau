@@ -5,11 +5,7 @@ local SlidingModule = require(ReplicatedStorage.Modules.SlidingModule)
 
 local function onCharacterAdded(Character)
 	Character:SetAttribute("Sliding", false)
-	local Slide = SlidingModule.NewSlide(Players:GetPlayerFromCharacter(Character), 10, Workspace.Part.Position)
-	task.wait(5)
-	Slide:StartSlide()
-	task.wait(3)
-	Slide:StopSlide()
+	SlidingModule.NewSlide(Players:GetPlayerFromCharacter(Character), 10, Workspace.Part.CFrame):StartSlide()
 end
 
 local function onPlayerAdded(Player)
